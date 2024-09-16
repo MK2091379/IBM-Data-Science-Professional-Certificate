@@ -20,18 +20,28 @@ app.layout = html.Div(children=[html.H1('SpaceX Launch Records Dashboard',
                                                'font-size': 40}),
                                 # TASK 1: Add a dropdown list to enable Launch Site selection
                                 # The default select value is for ALL sites
-                                # dcc.Dropdown(id='site-dropdown',...)
-                                dcc.Dropdown(id='site-dropdown',
-                                             options=[
-                                                    {'label': 'All Sites', 'value': 'All Sites'},
-                                                    {'label': 'CCAFS LC-40', 'value': 'CCAFS LC-40'},
-                                                    {'label': 'CCAFS SLC-40', 'value': 'CCAFS SLC-40'},
-                                                    {'label': 'VAFB SLC-4E', 'value': 'VAFB SLC-4E'},
-                                                    {'label': 'KSC LC-39A', 'value': 'KSC LC-39A'}
-                                                    ],
-                                            placeholder = 'Select a Launch Site',
-                                            searchable = True   
-                                            ),
+                                # dcc.Dropdown(id='site-dropdown',...)   
+                                dcc.Dropdown(
+                                    id='site-dropdown',
+                                    options=[
+                                            {'label': 'All Sites', 'value': 'All Sites'},
+                                            {'label': 'CCAFS LC-40', 'value': 'CCAFS LC-40'},
+                                            {'label': 'CCAFS SLC-40', 'value': 'CCAFS SLC-40'},
+                                            {'label': 'VAFB SLC-4E', 'value': 'VAFB SLC-4E'},
+                                            {'label': 'KSC LC-39A', 'value': 'KSC LC-39A'}
+                                    ],
+                                    value='ALL sites',
+                                    placeholder="Select a Launch Site",
+                                    searchable = True,
+                                    style={
+                                        'width': '80%',
+                                        'padding': '3px',
+                                        'font-size': '20px',
+                                        'text-align-last': 'center',
+                                        'display': 'flex'
+                                    }
+                                ),
+                                
                                 html.Br(),
 
                                 # TASK 2: Add a pie chart to show the total successful launches count for all sites
